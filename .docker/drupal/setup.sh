@@ -18,12 +18,13 @@ rm -f /root/.drupal-installation-complete
     mkdir docroot/sites/default/files docroot/sites/simpletest reports
     chown apache:apache docroot/sites/default/files docroot/sites/simpletest reports
     chmod 777 docroot/sites/default/files
-    composer config repositories.repo-name path "/var/www/admin_ui_support"
-    composer require justafish/drupal-admin-ui-support:dev-master
+#    composer config repositories.repo-name path "/var/www/admin_ui_support"
+#    composer require justafish/drupal-admin-ui-support:dev-master
     composer install
     chmod +x /var/www/drupal/docroot/core/scripts/drupal
     drush site:install demo_umami -y --db-url=mysql://drupal:drupal@mysql:3306/drupal --sites-subdir=default
-    drush en -y jsonapi admin_ui_support admin_ui_widget_example
+    drush en -y jsonapi
+#     admin_ui_support admin_ui_widget_example
     drush config:set -y system.logging error_level verbose
     rm -rf docroot/sites/default/files/styles
 #fi
