@@ -27,7 +27,7 @@ services:
       - 85:80
     volumes:
       - ~/.composer/cache:/root/.composer/cache
-      - ./.docker:/root/.docker
+#      - ./.docker:/root/.docker
       - ./demo:/var/www/drupal
 #      - ./admin_ui_support:/var/www/admin_ui_support
 #      - ./packages/admin-ui/build:/var/www/drupal/docroot/vfancy
