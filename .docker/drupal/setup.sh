@@ -12,7 +12,7 @@ if [[ ! -f /var/www/drupal/docroot/sites/default/settings.php ]]; then
   '^127\.0\.0\.1\$',
 ];" >> /var/www/drupal/docroot/sites/default/settings.php
     cp templates/composer.json composer.json
-    cp templates/composer.lock composer.lock
+#    cp templates/composer.lock composer.lock
     cp templates/.ht.router.php docroot/.ht.router.php
     echo "\$config_directories['sync'] = '../config/sync';" >> /var/www/drupal/docroot/sites/default/settings.php
     mkdir docroot/sites/default/files docroot/sites/simpletest reports
