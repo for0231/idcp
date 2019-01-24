@@ -5,11 +5,17 @@
     "license": "GPL-2.0-or-later",
     "require": {
         "composer/installers": "^1.2",
+        "drupal-composer/drupal-scaffold": "^2.5",
         "php": ">=7.0.8",
-        "drupal/core": "~8.7"
+        "drupal/core": "~8.7",
+        "oomphinc/composer-installers-extender": "^1.1",
+        "webflo/drupal-finder": "^1.1",
+        "webmozart/path-util": "^2.3",
+        "drush/drush": "^9.5",
+        "drupal/console": "^1.8"
     },
     "require-dev": {
-        "drush/drush": "^9.5"
+        "webflo/drupal-core-require-dev": "~8.7"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -20,6 +26,22 @@
     },
     "config": {
         "process-timeout": 0
+    },
+    "scripts": {
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "@composer drupal:scaffold",
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "@composer drupal:scaffold",
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ]
     },
     "extra": {
         "installer-types": ["library"],
@@ -39,11 +61,5 @@
                 "Remove Umami dependency to Workflows because the admin UI doesn't currently support it": "patches/remove-umami-workflows-dependency.patch"
             }
         }
-    },
-    "authors": [
-        {
-            "name": "John",
-            "email": "lijd@eabax.com"
-        }
-    ]
+    }
 }
