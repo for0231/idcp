@@ -4,6 +4,7 @@
     "type": "project",
     "license": "GPL-2.0-or-later",
     "require": {
+        "php": ">=7.0.8",
         "drupal/core": "~8.7"
     },
     "require-dev": {
@@ -11,6 +12,14 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ]
+    },
+    "config": {
+        "process-timeout": 0
+    },
     "authors": [
         {
             "name": "John",
