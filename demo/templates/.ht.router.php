@@ -26,15 +26,8 @@
 
 $url = parse_url($_SERVER['REQUEST_URI']);
 if (file_exists(__DIR__ . $url['path'])) {
-
-  if (strpos($url['path'], '.js') !==  FALSE) {
-    header('Access-Control-Request-Method: GET');
-    header('Access-Control-Allow-Origin: *');
-    header('Content-Type: application/javascript');
-  }
-
-  print file_get_contents(__DIR__ . $url['path']);
-  exit;
+  // Serve the requested resource as-is.
+  return FALSE;
 }
 
 // Work around the PHP bug.
