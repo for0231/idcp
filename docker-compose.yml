@@ -2,7 +2,7 @@ version: '3'
 
 services:
   mysql:
-    container_name: drupal_isp_admin_ui_mysql
+    container_name: mysql
     image: "mysql:5.7"
     volumes:
       - db_data:/var/lib/mysql
@@ -13,7 +13,7 @@ services:
       MYSQL_USER: drupal
       MYSQL_PASSWORD: drupal
   drupal:
-    container_name: drupal_isp_admin_ui_drupal
+    container_name: drupal
     depends_on:
       - "mysql"
     environment:
@@ -28,7 +28,8 @@ services:
     volumes:
       - ~/.composer/cache:/root/.composer/cache
       - ./.docker:/root/.docker
-      - ./demo:/var/www/drupal:rw
+      - ./drupal:/var/www/drupal
+      - ./isp_support:/var/www/isp
 
 volumes:
   db_data:

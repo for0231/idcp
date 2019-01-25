@@ -6,8 +6,8 @@ RUN apk add coreutils php sqlite composer git \
     php7-curl php7-xmlwriter php7-ctype php7-opcache php7-pdo_mysql mysql-client \
     php-apache2 apache2 apache2-ctl
 
-ADD demo /var/www/drupal
-ADD isp /var/www/isp
+ADD drupal /var/www/drupal
+ADD isp_support /var/www/isp
 
 RUN rm -rf /var/www/localhost && \
     sed -i 's/\/var\/www\/localhost\/htdocs/\/var\/www\/drupal\/docroot/g' /etc/apache2/httpd.conf && \
