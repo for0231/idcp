@@ -16,19 +16,22 @@
     "require": {
         "ext-pdo_sqlite" : "*",
         "composer/installers": "^1.2",
+        "oomphinc/composer-installers-extender": "^1.1",
+        "cweagans/composer-patches": "~1",
         "drupal-composer/drupal-scaffold": "^2.5",
         "php": ">=7.0.8",
         "drupal/core": "~8.7",
-        "oomphinc/composer-installers-extender": "^1.1",
         "webflo/drupal-finder": "^1.1",
         "webmozart/path-util": "^2.3",
-        "drush/drush": "^9.5",
-        "drupal/console": "^1.8",
+        "drupal/drupal-extension": "~3",
         "drupal/commerce_recurring": "^1.0@beta",
         "kgaut/potx": "dev-8.x-1.x",
+        "drupal/drupal-library-installer-plugin": "^0.3",
         "drupal/jsonapi": "^2.1"
     },
     "require-dev": {
+        "drupal/console": "^1.8",
+        "drush/drush": "^9.5",
         "webflo/drupal-core-require-dev": "~8.7"
     },
     "minimum-stability": "dev",
