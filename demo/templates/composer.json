@@ -20,7 +20,7 @@
         "cweagans/composer-patches": "~1",
         "drupal-composer/drupal-scaffold": "^2.5",
         "php": ">=7.0.8",
-        "drupal/core": "~8.7",
+        "drupal/core": "~8.6",
         "webflo/drupal-finder": "^1.1",
         "webmozart/path-util": "^2.3",
         "drupal/drupal-extension": "~3",
@@ -46,7 +46,7 @@
     },
     "scripts": {
         "setup": [
-            "cd docroot && php core/scripts/drupal install demo_umami --no-interaction",
+            "cd docroot && php core/scripts/drupal install standard --no-interaction",
             "cd docroot && ../vendor/bin/drush en -y jsonapi"
         ],
         "start": [
