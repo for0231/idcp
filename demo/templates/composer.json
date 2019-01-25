@@ -3,12 +3,16 @@
     "description": "The project for isp package.",
     "type": "project",
     "license": "GPL-2.0-or-later",
-    "repositories": [
-        {
+    "repositories": {
+        "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        "assets": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
-    ],
+    },
     "require": {
         "ext-pdo_sqlite" : "*",
         "composer/installers": "^1.2",
@@ -22,7 +26,7 @@
         "drupal/console": "^1.8",
         "drupal/commerce_recurring": "^1.0@beta",
         "kgaut/potx": "dev-8.x-1.x",
-        "drupal/varbase": "^6.3"
+        "drupal/jsonapi": "^2.1"
     },
     "require-dev": {
         "webflo/drupal-core-require-dev": "~8.7"
