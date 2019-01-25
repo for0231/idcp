@@ -28,6 +28,19 @@
         "process-timeout": 0
     },
     "scripts": {
+        "setup": [
+            "cd docroot && php core/scripts/drupal install demo_umami --no-interaction",
+            "cd docroot && ../vendor/bin/drush en -y jsonapi"
+        ],
+        "start": [
+            "cd docroot && php core/scripts/drupal server"
+        ],
+        "devify": [
+            "ln -s ../../../isp docroot/modules/contrib/isp"
+        ],
+        "test": [
+            "phpunit -c docroot/core --log-junit reports/phpunit.xml docroot/modules/contrib/isp"
+        ],
         "pre-install-cmd": [
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
