@@ -28,7 +28,7 @@ services:
     volumes:
       - ~/.composer/cache:/root/.composer/cache
       - ./.docker:/root/.docker
-      - ./demo:/var/www/drupal
+      - ./demo:/var/www/drupal:rw
 
 volumes:
   db_data:

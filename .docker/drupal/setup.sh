@@ -6,6 +6,8 @@ rm -f /root/.drupal-installation-complete
 if [[ ! -f /var/www/drupal/docroot/sites/default/settings.php ]]; then
     echo "settings.php not detected - installing Drupal (this may take some time, wait for a one-time login link to appear!)"
     rm -rf reports config composer.json composer.lock vendor docroot/.ht.router.php docroot/core docroot/modules docroot/sites/simpletest docroot/sites/default/files docroot/sites/default/settings.php docroot/sites/default/services.yml
+    ls -al /var/www/drupal/docroot/sites/default
+    whoami && id
     cp /var/www/drupal/docroot/sites/default/default.settings.php /var/www/drupal/docroot/sites/default/settings.php
     echo "\$settings['trusted_host_patterns'] = [
   '^drupal\$',
