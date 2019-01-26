@@ -17,6 +17,7 @@ if [[ ! -f /var/www/drupal/docroot/sites/default/settings.php ]]; then
     cp templates/composer.lock composer.lock
     cp templates/.ht.router.php docroot/.ht.router.php
     echo "\$config_directories['sync'] = '../config/sync';" >> /var/www/drupal/docroot/sites/default/settings.php
+    echo "\$settings['file_private_path'] = '/var/www/private';" >> /var/www/drupal/docroot/sites/default/settings.php
     mkdir docroot/sites/default/files docroot/sites/simpletest reports
     chown apache:apache docroot/sites/default/files docroot/sites/simpletest reports
     chmod 777 docroot/sites/default/files

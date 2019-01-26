@@ -3,38 +3,38 @@
 
 #sed -i 's/^include/#include/' sites/default/settings.php
 
-vendor/bin/drush si -y --account-pass=admin --db-url=mysql://root:root@localhost/icp
+drush si -y --account-pass=admin --db-url=mysql://drupal:drupal@mysql/drupal
 
-vendor/bin/drupal moi memcache
+drupal moi memcache
 #sed -i 's/^#include/include/' sites/default/settings.php
 
 # Fix Plugin (language) instance class "\Drupal\language\DefaultLanguageItem" does not exist.
-vendor/bin/drush cr
+drush cr
 
-vendor/bin/drush pmu -y contextual dblog toolbar
+drush pmu -y contextual dblog toolbar
 
-vendor/bin/drupal moi block_class role_frontpage role_menu small_title user_plus
+drupal moi block_class role_frontpage role_menu small_title user_plus
 
 # enable it in prod.
-#vendor/bin/drupal moi -y memcache memcache_admin
+#drupal moi -y memcache memcache_admin
 ## Install for dev
-vendor/bin/drupal moi -y devel kint webprofiler
-vendor/bin/drush pmu -y toolbar
+drupal moi -y devel kint webprofiler
+drush pmu -y toolbar
 
-#vendor/bin/drush views:slideshow:lib
-vendor/bin/drush cset system.performance js.preprocess 0 -y
-vendor/bin/drush cset system.performance css.preprocess 0 -y
-vendor/bin/drush cset user.settings password_strength false -y
-vendor/bin/drush cset user.settings register visitors -y
-vendor/bin/drush cset user.settings verify_mail false -y
+#drush views:slideshow:lib
+drush cset system.performance js.preprocess 0 -y
+drush cset system.performance css.preprocess 0 -y
+drush cset user.settings password_strength false -y
+drush cset user.settings register visitors -y
+drush cset user.settings verify_mail false -y
 
 
-vendor/bin/drupal thi smart -y
-vendor/bin/drush cset -y system.theme default smart
-vendor/bin/drush cset -y system.theme admin smart
+drupal thi smart -y
+drush cset -y system.theme default smart
+drush cset -y system.theme admin smart
 
-#vendor/bin/drush language-add zh-hans
+#drush language-add zh-hans
 
 # isp modules
-vendor/bin/drush en -y comp
+drush en -y comp
 

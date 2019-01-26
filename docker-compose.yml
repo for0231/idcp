@@ -31,5 +31,25 @@ services:
       - ./drupal:/var/www/drupal
       - ./isp_support:/var/www/isp_support
 
+  node:
+    container_name: node
+    environment:
+      - REACT_APP_DRUPAL_BASE_URL=http://127.0.0.1
+      - REACT_APP_DRUPAL_ROOT=/
+      - NIGHTWATCH_CHROMEDRIVER_PATH=/usr/bin/chromedriver
+      - NIGHTWATCH_CHROME_ARGS=--headless --no-sandbox
+      - NIGHTWATCH_URL=http://drupal
+    build:
+      context: .
+      dockerfile: ./.docker/node/Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/root/node-ui
+      - ~/.cache/yarn:/root/.cache/yarn
+      - /root/node-ui/node_modules
+#      - /root/node-ui/packages/admin-ui/node_modules
+#      - /root/node-ui/packages/components/node_modules
+#      - /root/node-ui/packages/extension-points/node_modules
 volumes:
   db_data:
