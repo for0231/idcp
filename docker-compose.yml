@@ -29,7 +29,7 @@ services:
       - ~/.composer/cache:/root/.composer/cache
       - ./.docker:/root/.docker
       - ./drupal:/var/www/drupal
-      - ./isp_support:/var/www/isp
+      - ./isp_support:/var/www/isp_support
 
 volumes:
   db_data:

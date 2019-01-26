@@ -52,6 +52,7 @@
             "cd docroot && php core/scripts/drupal server"
         ],
         "devify": [
+            "ln -s ../../../../isp_support docroot/modules/contrib/isp_support",
             "pwd",
             "ls -al"
         ],
