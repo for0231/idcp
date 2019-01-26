@@ -1,0 +1,16 @@
+{
+    "name": "drupal/isp_support",
+    "type": "drupal-module",
+    "description": "Drupal support module for isp",
+    "license": "GPL-2.0-or-later",
+    "require-dev": {
+        "cweagans/composer-patches": "^1.6",
+        "drupal/drupal-extension": "master-dev",
+        "bex/behat-screenshot": "^1.2",
+        "phpmd/phpmd": "^2.6",
+        "phpmetrics/phpmetrics": "^2.3"
+    },
+    "require": {
+        "php": "^5.5.9 || ^7.0"
+    }
+}

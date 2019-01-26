@@ -52,7 +52,8 @@
             "cd docroot && php core/scripts/drupal server"
         ],
         "devify": [
-            "ln -s ../../../isp docroot/modules/contrib/isp"
+            "pwd",
+            "ls -al"
         ],
         "test": [
             "phpunit -c docroot/core --log-junit reports/phpunit.xml docroot/modules/contrib/isp"

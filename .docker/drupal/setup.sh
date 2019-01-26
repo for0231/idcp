@@ -20,6 +20,8 @@ if [[ ! -f /var/www/drupal/docroot/sites/default/settings.php ]]; then
     mkdir docroot/sites/default/files docroot/sites/simpletest reports
     chown apache:apache docroot/sites/default/files docroot/sites/simpletest reports
     chmod 777 docroot/sites/default/files
+    composer config repositories.repo-name path "/var/www/isp_support"
+    composer require drupal/isp_support:dev-master
     composer install
     chmod +x /var/www/drupal/docroot/core/scripts/drupal
 #    drush site:install demo_umami -y --db-url=mysql://drupal:drupal@mysql:3306/drupal --sites-subdir=default
