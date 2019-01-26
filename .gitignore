@@ -1,1 +1,11 @@
 .idea/
+drupal/composer.json
+drupal/composer.lock
+drupal/config/
+drupal/docroot/.ht.router.php
+drupal/docroot/core/
+drupal/docroot/modules/
+drupal/docroot/sites/default/files/
+drupal/docroot/sites/default/services.yml
+drupal/docroot/sites/default/settings.php
+drupal/vendor/
