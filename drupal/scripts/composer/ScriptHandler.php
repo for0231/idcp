@@ -17,6 +17,7 @@ class ScriptHandler {
     $drupalFinder->locateRoot(getcwd());
     $drupalRoot = $drupalFinder->getDrupalRoot();
     $dirs = [
+      'libraries',
       'modules',
       'profiles',
       'themes',

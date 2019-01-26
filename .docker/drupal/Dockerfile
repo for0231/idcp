@@ -1,10 +1,14 @@
 FROM alpine:3.8
 
-RUN apk add coreutils php sqlite composer git \
+RUN apk add coreutils php curl sqlite composer git \
     php7-pdo php7-sqlite3 php7-pdo_sqlite php7-gd php7-openssl php7-json \
     php7-mbstring php7-dom php7-session php7-xml php7-simplexml php7-tokenizer \
     php7-curl php7-xmlwriter php7-ctype php7-opcache php7-pdo_mysql mysql-client \
     php-apache2 apache2 apache2-ctl
+
+RUN curl -o- -L https://yarnpkg.com/install.sh | sh; \
+    echo "" >> ~/.bashrc && \
+    echo 'export PATH="/home/root/.yarn/bin:$PATH"' >> ~/.bashrc
 
 ADD drupal /var/www/drupal
 ADD isp_support /var/www/isp_support
